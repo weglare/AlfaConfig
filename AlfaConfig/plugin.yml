@@ -1,0 +1,41 @@
+author: Glare
+main: com.glare.config.Main
+version: '0.0.1'
+name: AlfaConfig
+description: "Configurate your server via config.yml and commands."
+commands:
+    alfaconfig:
+        description: Parent command for all AlfaConfig commands.
+        usage: /<command> [args]
+        aliases: [ac]
+permissions:
+    alfaconfig.*:
+        default: op
+        children:
+            alfaconfig.getupdates: true
+            alfaconfig.command.*: true
+    alfaconfig.command.*:
+        default: op
+        children:
+            alfaconfig.command.list: true
+            alfaconfig.command.reload: true
+            alfaconfig.command.enable: true
+            alfaconfig.command.disable: true
+            alfaconfig.command.hideme: true
+            alfaconfig.command.hideme.others: true
+            alfaconfig.command.update: true
+    alfaconfig.hidejoin:
+        default: true
+    alfaconfig.hidequit:
+        default: true
+    alfaconfig.command.list:
+        default: true
+    alfaconfig.command.reload:
+        default: op
+    alfaconfig.command.enable:
+        default: op
+    alfaconfig.command.disable:
+        default: op
+    alfaconfig.command.update:
+        default: op
+  
